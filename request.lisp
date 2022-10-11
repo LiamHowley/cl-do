@@ -45,6 +45,9 @@
 (defun put-request (uri data)
   (post-request uri :put data))
 
+(defun patch-request (uri data)
+  (post-request uri :patch data))
+
 (defun delete-request (uri &optional headers)
   (get-request uri :delete headers))
 
