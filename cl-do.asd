@@ -1,4 +1,4 @@
-(defsystem #:cl-do
+defsystem #:cl-do
     :description "Wrapper to digital ocean api"
     :depends-on ("drakma"
 		 "alexandria"
@@ -11,4 +11,7 @@
 		 (:file "image")
 		 (:file "snapshot")
 		 (:file "droplet")
-		 (:file "vpc")))
+		 (:file "vpc"))
+    :long-description
+    #.(uiop:read-file-string
+       (uiop:subpathname *load-pathname* "docs/README.org")))

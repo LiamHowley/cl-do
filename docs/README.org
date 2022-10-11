@@ -1,0 +1,11 @@
+#+LATEX_CLASS: comp-documentation
+#+TITLE: CL-DO
+#+AUTHOR: Liam Howley
+#+DESCRIPTION: CL-DO is a wrapper on the Digital Ocean API
+
+#+OPTIONS: toc
+
+** Introduction
+
+This is a work in progress. What is available should be good to go, but is very much an ongoing project at the moment. 
+More documentation will appear in time.
