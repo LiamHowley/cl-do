@@ -1,9 +1,14 @@
-(defsystem #:cl-do-wrap
+(defsystem #:cl-do
     :description "Wrapper to digital ocean api"
     :depends-on ("drakma"
+		 "alexandria"
 		 "flexi-streams"
-		 "yason")
+		 "yason"
+		 "fare-memoization")
     :components ((:file "package")
-		 (:file "request"))
+		 (:file "request")
+		 (:file "account")
 		 (:file "image")
-		 (:file "droplet")))
+		 (:file "snapshot")
+		 (:file "droplet")
+		 (:file "vpc")))
