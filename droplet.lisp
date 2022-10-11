@@ -76,7 +76,6 @@ parsed from list-associated-resources-for-a-droplet."
 				 :keys '("destroy_with_associated_resources" "dangerous")
 				 :headers '(("X-Dangerous" . "true")))))
 
-
 (defun droplet-neighbours ()
   "Retrieve a list of all droplets that are co-located 
 on the same physical hardware"

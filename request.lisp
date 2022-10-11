@@ -7,7 +7,7 @@
 		(typecase keys
 		  (atom (list keys))
 		  (cons keys)))))
-    (format nil "~(~a~a~@[/~a~]~@[/~{~a~^/~}~]~@[?~{~{~a=~a~^&~}~}~]~)"
+    (format nil "~(~a~a~@[/~a~]~@[/~{~a~^/~}~]~)~@[?~{~{~a=~a~}~^&~}~]"
 	    base-uri category identifier keys parameters)))
 
 
