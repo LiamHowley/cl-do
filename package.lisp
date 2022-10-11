@@ -2,6 +2,8 @@
   (:use :cl)
   (:import-from :drakma
 		:http-request)
+  (:import-from :fare-memoization
+		:define-memo-function)
   (:import-from :yason
 		:parse
 		:*parse-object-as*
@@ -30,16 +32,18 @@
 	   :create-custom-image
 	   :retrieve-image
 	   :update-image
-	   :delete-image
-
-	   ))
+	   :delete-image))
 
 
 (in-package :cl-do)
 
-(defparameter *auth-token*
+(defvar token-file nil)
+
+(defvar *auth-token* (make-hash-table :test #'equal))
+
+(define-memo-function (auth-token :table *auth-token*) (token-file)
   (concatenate 'string "Bearer " 
-	       (with-open-file (stream #P "~/do" :direction :input) 
+	       (with-open-file (stream #P token-file :direction :input) 
 		 (let ((seq (make-array (file-length stream) :element-type 'character)))
 		   (read-sequence seq stream)
 		   seq))))

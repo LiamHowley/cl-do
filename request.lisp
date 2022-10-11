@@ -20,7 +20,7 @@
 
 
 (defun make-request (uri &key (content-type "application/json") method content headers (want-stream t))
-  (let* ((auth `(("Authorization" . ,*auth-token*)))
+  (let* ((auth `(("Authorization" . ,(auth-token))))
 	 (headers (if headers (nconc auth headers) auth)))
     #'(lambda ()
 	(http-request uri
